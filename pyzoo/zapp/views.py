@@ -11,32 +11,45 @@ def _showError(error):
     context = Context(values)
     return render_to_response('error.htpl', context)
 
-def _showSearch(r):
+def _showSearch():
     values = {}
     context = Context(values)
-    context.update(csrf(r))
     return render_to_response('search.htpl', context)
 
-def _showResults(r, results):
-    values = {}
+def _showResults(searchtype,searchquery,results):
+    values = {
+        'searchtype':searchtype,
+        'searchquery':searchquery,
+        'results':results
+        }
     context = Context(values)
     return render_to_response('results.htpl', context)
 
 #-------------------------------------------------------------------------------
 # Processing Routines
 
-def _getResults():
+# Returns list of tuples in the format:
+# [ (Instance,Name,Value), ... ]
+def _getResults(searchtype,searchquery):
     #ZookeeperInstance.objects.all()
-    pass
+    testval=[
+        ("TST01","vantiv.connection.enabled","true"),
+        ("TST02","vantiv.connection.enabled","false"),
+        ("TST03","vantiv.connection.enabled","false"),
+        ("DEV01","vantiv.connection.enabled","false"),
+        ("DEV02","vantiv.connection.enabled","true"),
+        ]
+    return testval
 
 #-------------------------------------------------------------------------------
 # Page Handlers
 
 def search(r):
-    if r.method == 'POST':
-        query = r.POST['searchquery']
-        results=_getResults(query)
-        return _showResults(results)
+    if 'q' in r.GET:
+        query = r.GET['q']
+        type = r.GET['t']
+        results=_getResults(type,query)
+        return _showResults(type,query,results)
     else:
-        return _showSearch(r)
+        return _showSearch()
 

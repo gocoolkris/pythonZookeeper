@@ -4,9 +4,12 @@
 {%block content%}
 
 <div style="text-align:center" id=searchdiv>
-<form id=searchform name=searchform method=POST action=.>
-{%csrf_token%}
-<input type=text id=searchquery name=searchquery size=40 />
+<form id=searchform name=searchform method=GET action=.>
+<select name=t id=t>
+    <option value=text>text</option>
+    <option value=regex>regex</option>
+</select>
+<input type=text id=q name=q size=40 />
 <input type=submit />
 </form>
 </div>

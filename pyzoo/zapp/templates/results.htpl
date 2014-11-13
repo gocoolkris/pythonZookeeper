@@ -3,10 +3,25 @@
 {%block header%}Zookeeper Search Results{%endblock%}
 {%block content%}
 
-<ul>
-{%for result in results%}
-<li>{{result}}</li>
-{%endfor%}
-</ul>
+<div>
+Search type: {{searchtype}}<br>
+Search query: {{searchquery}}<br><br>
+</div>
 
+<div>
+<table>
+<tr>
+    <th style="text-align:left">Instance</th>
+    <th style="text-align:left">Name</th>
+    <th style="text-align:left">Value</th>
+</tr>
+{%for instance,name,value in results%}
+<tr>
+    <td>{{instance}}</td>
+    <td>{{name}}</td>
+    <td>{{value}}</td>
+</tr>
+{%endfor%}
+</table>
+</div>
 {%endblock%}
