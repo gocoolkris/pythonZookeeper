@@ -42,7 +42,7 @@ def _getResults(searchtype,searchquery):
                 if tup[1] == searchquery :
                     results.append(tup)
     else:
-        searchquery.replace('*', '.*')
+        searchquery = searchquery.replace('*', '.*')
         pattern = re.compile(searchquery)
         for inst in all_properties:
             for tup in inst:
