@@ -46,8 +46,6 @@ def getAllProperties(urls):
 #    for t in threads: print str(t.properties)[0:64]
     allprops=[]
     for t in threads: allprops.append(t.properties)
-    print len(allprops)
-    for allprop in allprops: print allprop, '\n'
     return allprops
 
 

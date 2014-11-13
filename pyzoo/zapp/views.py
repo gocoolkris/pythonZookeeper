@@ -38,7 +38,6 @@ def _getResults(searchtype,searchquery):
     if searchtype == 'text':
         for inst in all_properties:
             for tup in inst:
-                print tup[1]
                 if tup[1] == searchquery :
                     results.append(tup)
     else:
