@@ -1,7 +1,8 @@
 from django.template import Context, loader
 from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
-
+from scraper import getAllProperties, urls
+import re
 # Create your views here.
 #-------------------------------------------------------------------------------
 # Page Display Routines
@@ -32,6 +33,23 @@ def _showResults(searchtype,searchquery,results):
 # [ (Instance,Name,Value), ... ]
 def _getResults(searchtype,searchquery):
     #ZookeeperInstance.objects.all()
+    all_properties =  getAllProperties(urls)
+    results = []
+    if searchtype == 'text':
+        for inst in all_properties:
+            for tup in inst:
+                print tup[1]
+                if tup[1] == searchquery :
+                    results.append(tup)
+    else:
+        searchquery.replace('*', '.*')
+        pattern = re.compile(searchquery)
+        for inst in all_properties:
+            for tup in inst:
+                if pattern.match(tup[1]):
+                    results.append(tup)
+    return results
+    '''
     testval=[
         ("TST01","vantiv.connection.enabled","true"),
         ("TST02","vantiv.connection.enabled","false"),
@@ -40,7 +58,7 @@ def _getResults(searchtype,searchquery):
         ("DEV02","vantiv.connection.enabled","true"),
         ]
     return testval
-
+    '''
 #-------------------------------------------------------------------------------
 # Page Handlers
 
