@@ -1,0 +1,7 @@
+{%extends "base.htpl"%}
+{%block title%}Pooper-Scooper Error{%endblock%}
+{%block header%}Pooper-Scooper Error{%endblock%}
+{%block content%}
+<h1>Error</h1>
+{{error}}
+{%endblock%}

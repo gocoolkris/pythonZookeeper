@@ -1,0 +1,96 @@
+/* General styles */
+html,body {
+	background:#dddddd;
+	font-family: "Arial", Arial, sans-serif;
+}
+#error {
+	color: #ff0000;
+}
+input,select,textarea {
+	background-color: #f3f3f3;
+}
+a {
+	text-decoration:none;
+}
+/* Classes */
+
+div.bordered {
+	border: 1px solid black;
+}
+table.bordered {
+	border-collapse:collapse;
+}
+table.bordered td {
+	border: 1px solid gray;
+	text-align: center;
+}
+table.bordered th {
+	border: 1px solid gray;
+	text-align: center;
+}
+.strikethrough {
+	text-decoration: line-through;
+}
+div.time_clockin {
+	width: 200px;
+	height: 30px;
+	font-size: 180%;
+	color: #E00;
+	text-align: left;
+	text-shadow: 0.05em 0.05em #333;
+	display: table-cell;
+	vertical-align: middle;
+}
+div.time_clockout {
+	width: 200px;
+	height: 30px;
+	font-size: 180%;
+	color: #0C0;
+	text-align: left;
+	text-shadow: 0.05em 0.05em #333;
+	display: table-cell;
+	vertical-align: middle;
+}
+/* Layout stuff */
+#container {
+	width: 800px;
+	margin: auto;
+	background: #ffffff;
+}
+#background {
+	margin: 0px;
+	background-image: url('/images/header.png');
+	background-repeat: none;
+	overflow: auto;
+}
+#header {
+
+}
+#footer {
+	text-align: center;
+	color: #555555;
+	font-size: 10px;
+	clear: both;
+}
+/* Menu stuff */
+#menu {
+	width: 100%;
+	text-shadow: 0.1em 0.1em 0.2em black;
+	background: #45a067;
+	position: relative;
+}
+#menu ul {
+	margin-left: 0px;
+}
+#menu ul li {
+	display: inline;
+	padding: 20px;
+	font-size: 20px;
+}
+#menu a {
+	color: #dddddd;
+}
+#menu a:hover {
+	color: #ffffff;
+}
+

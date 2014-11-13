@@ -1,0 +1,19 @@
+<head>
+	<title>Zookeeper Pooper-Scooper</title>
+	<link href="/static/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="container">
+	<div id="header">
+	    <img style="float:right" src=/static/logo.png>
+		<h1>{%block header%}{%endblock%}</h1>
+	</div>
+	<div id="content">
+		{%block content%}
+		{{ content }}
+		{%endblock%}
+	</div>
+	<br>
+	<div id="footer"><i>For more information please contact <a href="mailto:webmaster@example.com">Gokul Ragunathan</a></i></div>
+</div>
+</body>

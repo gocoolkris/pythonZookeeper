@@ -1,0 +1,16 @@
+{%extends "base.htpl"%}
+{%block title%}Zookeeper Search{%endblock%}
+{%block header%}Zookeeper Search{%endblock%}
+{%block content%}
+
+<div style="text-align:center" id=searchdiv>
+<form id=searchform name=searchform method=POST action=.>
+{%csrf_token%}
+<input type=text id=searchquery name=searchquery size=40 />
+<input type=submit />
+</form>
+</div>
+
+{%endblock%}
+
+

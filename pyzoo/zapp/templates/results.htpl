@@ -1,0 +1,12 @@
+{%extends "base.htpl"%}
+{%block title%}Zookeeper Search Results{%endblock%}
+{%block header%}Zookeeper Search Results{%endblock%}
+{%block content%}
+
+<ul>
+{%for result in results%}
+<li>{{result}}</li>
+{%endfor%}
+</ul>
+
+{%endblock%}
