@@ -3,6 +3,21 @@
 {%block header%}Zookeeper Search{%endblock%}
 {%block content%}
 
+<script>
+function hideProgress() {
+    alert("here");
+    progress=document.getElementById("progressdiv");
+    progress.style.display="none";
+}
+function submitForm() {
+    document.body.onunload=hideProgress;
+    progress=document.getElementById("progressdiv");
+    progress.style.display="block";
+    form=document.getElementById("searchform");
+    form.submit();
+}
+</script>
+
 <div style="text-align:center" id=searchdiv>
 <form id=searchform name=searchform method=GET action=.>
 <select name=t id=t>
@@ -10,8 +25,14 @@
     <option value=regex>regex</option>
 </select>
 <input type=text id=q name=q size=40 />
-<input type=submit />
+<!---<input type=submit />-->
+<button id=submitbutton  onClick="submitForm()">Submit</button>
 </form>
+
+<div style="display:none" id=progressdiv>
+<img src=/static/progress.gif /><br>
+<i>Scooping...</i>
+</div>
 </div>
 
 {%endblock%}
