@@ -5,7 +5,6 @@
 
 <script>
 function hideProgress() {
-    alert("here");
     progress=document.getElementById("progressdiv");
     progress.style.display="none";
 }
@@ -25,7 +24,6 @@ function submitForm() {
     <option value=regex>regex</option>
 </select>
 <input type=text id=q name=q size=40 />
-<!---<input type=submit />-->
 <button id=submitbutton  onClick="submitForm()">Submit</button>
 </form>
 
